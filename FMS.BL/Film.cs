@@ -5,6 +5,10 @@ namespace FMS.BL
 {
     public class Film
     {
+        public Film()
+        {
+
+        }
         public int filmId { get; private set; }
         public string filmName { get; set; }
         public int releaseYear { get; set; }
@@ -12,6 +16,21 @@ namespace FMS.BL
         public bool owned { get; set; }
         public int rating { get; set; }
         public string genre { get; set; }
+        public string FilmDetails
+        {
+            get
+            {
+                string filmdetails = filmName;
+                if (!string.IsNullOrWhiteSpace(releaseYear.ToString()))
+                {
+                    if (!string.IsNullOrWhiteSpace(filmdetails))
+                    {
+                        filmdetails += " (" + releaseYear.ToString() + ")";
+                    }                    
+                }
+                return filmdetails;
+            }
+        }
 
         public Film Retrieve(int filmId)
         {
