@@ -29,22 +29,7 @@ namespace FMS.BL
                 }
                 return filmdetails;
             }
-        }
-
-        public Film Retrieve(int filmId)
-        {
-            return new Film();
-        }
-            
-        public List<Film> Retrieve()
-        {
-            return new List<Film>();
-        }
-
-        public bool Save()
-        {
-            return true;
-        }
+        }              
 
         public bool Validate()
         {
