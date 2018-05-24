@@ -13,7 +13,7 @@ namespace FMS.BL
         public int rating { get; set; }
         public string genre { get; set; }
 
-        public Film Retreive()
+        public Film Retrieve(int filmId)
         {
             return new Film();
         }
