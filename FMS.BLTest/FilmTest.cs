@@ -12,7 +12,7 @@ namespace FMS.BLTest
         {
             Film film = new Film();
 
-            film.filmName = "Ted";
+            film.FilmName = "Ted";
 
             bool expected = true;
 
@@ -37,15 +37,27 @@ namespace FMS.BLTest
         public void FilmDetailsValid()
         {
             Film film = new Film();
-            film.filmName = "Ted";
-            film.releaseYear = 2009;
+            film.FilmName = "Ted";
+            film.ReleaseYear = 2009;
 
             string expected = "Ted (2009)";
 
             string actual = film.FilmDetails;
 
             Assert.AreEqual(expected, actual);
+        }
 
+        [TestMethod]
+        public void FilmDetailsMissingYear()
+        {
+            Film film = new Film();
+            film.FilmName = "Ted";
+
+            string expected = "Ted";
+
+            string actual = film.FilmDetails;
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

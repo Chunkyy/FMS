@@ -9,23 +9,22 @@ namespace FMS.BL
         {
 
         }
-        public int filmId { get; private set; }
-        public string filmName { get; set; }
-        public int releaseYear { get; set; }
-        public bool seen { get; set; }
-        public bool owned { get; set; }
-        public int rating { get; set; }
-        public string genre { get; set; }
+        public int FilmId { get; private set; }
+        public string FilmName { get; set; }
+        public int? ReleaseYear { get; set; }
+        public bool Seen { get; set; }
+        public bool Owned { get; set; }
+        public int Rating { get; set; }
         public string FilmDetails
         {
             get
             {
-                string filmdetails = filmName;
-                if (!string.IsNullOrWhiteSpace(releaseYear.ToString()))
+                string filmdetails = FilmName;
+                if (!string.IsNullOrWhiteSpace(ReleaseYear.ToString()))
                 {
                     if (!string.IsNullOrWhiteSpace(filmdetails))
                     {
-                        filmdetails += " (" + releaseYear.ToString() + ")";
+                        filmdetails += " (" + ReleaseYear.ToString() + ")";
                     }                    
                 }
                 return filmdetails;
@@ -51,8 +50,8 @@ namespace FMS.BL
         {
             var IsValid = true;
 
-            if (string.IsNullOrWhiteSpace(filmId.ToString())) IsValid = false;
-            if (string.IsNullOrWhiteSpace(filmName)) IsValid = false;
+            if (string.IsNullOrWhiteSpace(FilmId.ToString())) IsValid = false;
+            if (string.IsNullOrWhiteSpace(FilmName)) IsValid = false;
 
             return IsValid;
         }

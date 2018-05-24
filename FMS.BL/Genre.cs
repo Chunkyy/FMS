@@ -6,8 +6,8 @@ namespace FMS.BL
 {
     class Genre
     {
-        public int genreId { get; private set; }
-        public string genre { get; set; }
+        public int GenreId { get; private set; }
+        public string Type { get; set; }
 
         public Genre Retrieve(int genreId)
         {
