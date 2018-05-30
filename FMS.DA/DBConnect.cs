@@ -8,7 +8,7 @@ namespace FMS.DA
 {
     class DBConnect
     {
-        static void Connect(string[] args)
+        public static void Connect(string[] args)
         {
             using (SqlConnection connString = new SqlConnection())
             {
@@ -32,6 +32,8 @@ namespace FMS.DA
                     Console.WriteLine(builder.ConnectionString);
 
                     connString.ConnectionString = builder.ConnectionString;
+
+                    connString.Open();
                 }
             }
         }

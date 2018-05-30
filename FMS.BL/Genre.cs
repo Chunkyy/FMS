@@ -9,14 +9,11 @@ namespace FMS.BL
         public int GenreId { get; private set; }
         public string GenreDescr { get; set; }
 
-        public Genre Retrieve(int genreId)
+        public bool Validate()
         {
-            return new Genre();
-        }
+            var isValid = true;
 
-        public List<Genre> Retrieve()
-        {
-            return new List<Genre>();
-        }
+            return isValid;
+        }        
     }
 }
